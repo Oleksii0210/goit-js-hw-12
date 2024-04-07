@@ -12,7 +12,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 const searchForm = document.querySelector('.form');
 const inputElement = document.querySelector('.search-input');
 const loader = document.querySelector('.loader');
-const loadMoreBtn = document.querySelector('.load-more-btn');
+
 
 hideLoader();
 
