@@ -9,10 +9,12 @@ import {
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
 const searchForm = document.querySelector('.form');
 const inputElement = document.querySelector('.search-input');
 const loader = document.querySelector('.loader');
-
+const loadMoreBtn = document.querySelector('.load-more-btn');
 
 hideLoader();
 
@@ -131,6 +133,14 @@ function hideEndOfCollectionMessage() {
   }
 }
 
+// * scroll
+window.addEventListener('scroll', () => {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    scrollToTopBtn.style.display = 'flex';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
+});
 
 function scrollToTop() {
   window.scrollTo({
@@ -139,3 +149,4 @@ function scrollToTop() {
   });
 }
 
+scrollToTopBtn.addEventListener('click', scrollToTop);
